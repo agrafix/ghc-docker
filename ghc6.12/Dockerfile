@@ -20,10 +20,10 @@ RUN cd ghc-6.12.3 && ./configure
 RUN cd ghc-6.12.3 && make install
 RUN rm -rf ghc.tar.bz2 ghc-6.12.3
 
-# Install cabal0.10.0
-RUN wget -O cabal.tar.gz http://hackage.haskell.org/package/cabal-install-0.10.0/cabal-install-0.10.0.tar.gz
+# Install cabal0.14.0
+RUN wget -O cabal.tar.gz http://hackage.haskell.org/package/cabal-install-0.14.0/cabal-install-0.14.0.tar.gz
 RUN tar xvfz cabal.tar.gz
-RUN cd cabal-install-0.10.0 && chmod +x ./bootstrap.sh
-RUN cd cabal-install-0.10.0 && ./bootstrap.sh
-RUN rm -rf cabal-install-0.10.0 cabal.tar.gz
+RUN cd cabal-install-0.14.0 && chmod +x ./bootstrap.sh
+RUN cd cabal-install-0.14.0 && ./bootstrap.sh
+RUN rm -rf cabal-install-0.14.0 cabal.tar.gz
 ENV PATH /.cabal/bin:$PATH
